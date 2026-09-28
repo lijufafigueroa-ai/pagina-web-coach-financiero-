@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mi Coach Financiero Virtual</title>
+<meta name="description" content="Coach financiero virtual: diagnostica tus hábitos y emociones, define metas SMART y sigue tu progreso con herramientas interactivas.">
+<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="logo"><div class="coin">$</div> Mi Coach Financiero</div>
+    <nav class="nav-links">
+      <button data-nav="inicio" class="active">Inicio</button>
+      <button data-nav="diagnostico">1. Diagnóstico</button>
+      <button data-nav="plan">2. Planificación</button>
+      <button data-nav="herramientas">3. Herramientas</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- INICIO -->
+  <section id="inicio" class="section active">
+    <div class="hero">
+      <div class="badge">Bienestar + Finanzas</div>
+      <h1>Tu dinero, tus emociones,<br><span>tu tranquilidad</span></h1>
+      <p>Un coach virtual que combina la gestión financiera con un enfoque psicológico y humano. Diagnostica tus hábitos, define metas realistas y avanza paso a paso.</p>
+      <button class="btn btn-green" data-nav="diagnostico">Comenzar mi diagnóstico</button>
+    </div>
+    <div class="steps">
+      <div class="card"><div class="num">1</div><h3>Diagnóstico</h3><p>Identifica tus hábitos de gasto y los detonantes emocionales que influyen en tus decisiones de dinero.</p></div>
+      <div class="card"><div class="num">2</div><h3>Planificación</h3><p>Define metas SMART con microacciones concretas y frases motivadoras que te acompañan cada día.</p></div>
+      <div class="card"><div class="num">3</div><h3>Herramientas</h3><p>Simulador de ahorro, bitácora emocional, panel de metas y recordatorios para mantener el rumbo.</p></div>
+    </div>
+  </section>
+
+  <!-- DIAGNÓSTICO -->
+  <section id="diagnostico" class="section">
+    <h2 class="title">Paso 1 · Diagnóstico de hábitos y emociones</h2>
+    <p class="sub">Responde con honestidad. No hay respuestas correctas, solo información para conocerte mejor.</p>
+    <div class="grid2">
+      <div class="card">
+        <h3>Tus hábitos</h3>
+        <label>¿Con qué frecuencia compras por impulso?</label>
+        <select id="qImpulso">
+          <option value="1">Casi nunca</option><option value="2">A veces</option><option value="3">Con frecuencia</option><option value="4">Casi siempre</option>
+        </select>
+        <label>¿Llevas un registro de tus gastos?</label>
+        <select id="qRegistro">
+          <option value="4">Sí, siempre</option><option value="3">A veces</option><option value="2">Casi nunca</option><option value="1">Nunca</option>
+        </select>
+        <label>¿Ahorras una parte de tus ingresos cada mes?</label>
+        <select id="qAhorro">
+          <option value="4">Sí, de forma constante</option><option value="3">Cuando me sobra</option><option value="2">Rara vez</option><option value="1">Nunca</option>
+        </select>
+        <label>¿Usas crédito para gastos del día a día?</label>
+        <select id="qCredito">
+          <option value="1">Nunca</option><option value="2">Ocasionalmente</option><option value="3">Con frecuencia</option><option value="4">Siempre</option>
+        </select>
+      </div>
+      <div class="card">
+        <h3>Tus detonantes emocionales</h3>
+        <p class="sub" style="margin-bottom:4px">Selecciona las emociones que suelen llevarte a gastar:</p>
+        <div class="chips" id="chipsEmociones">
+          <button class="chip">Estrés</button><button class="chip">Ansiedad</button><button class="chip">Tristeza</button><button class="chip">Aburrimiento</button><button class="chip">Alegría / celebración</button><button class="chip">Presión social</button><button class="chip">Culpa</button><button class="chip">Ninguna</button>
+        </div>
+        <label>Cuéntame: ¿en qué situación reciente el dinero te generó una emoción fuerte?</label>
+        <textarea id="txtReflexion" rows="4" placeholder="Ejemplo: compré algo costoso después de una semana difícil en el trabajo..."></textarea>
+        <div style="margin-top:18px"><button class="btn btn-green" id="btnDiagnosticar">Ver mi diagnóstico</button></div>
+      </div>
+    </div>
+    <div class="result" id="resultadoDiag"></div>
+  </section>
+
+  <!-- PLANIFICACIÓN -->
+  <section id="plan" class="section">
+    <h2 class="title">Paso 2 · Planificación de metas SMART</h2>
+    <p class="sub">Una meta SMART es Específica, Medible, Alcanzable, Relevante y con Tiempo definido.</p>
+    <div class="grid2">
+      <div class="card">
+        <h3>Nueva meta</h3>
+        <label>Nombre de la meta (específica)</label>
+        <input id="gNombre" placeholder="Ej: Fondo de emergencia">
+        <div class="row">
+          <div><label>Monto objetivo ($)</label><input id="gMonto" type="number" min="1" placeholder="3000"></div>
+          <div><label>Fecha límite</label><input id="gFecha" type="date"></div>
+        </div>
+        <label>¿Por qué es importante para ti? (relevancia)</label>
+        <input id="gPorque" placeholder="Ej: Dormir tranquilo ante imprevistos">
+        <label>Microacción semanal (pequeño paso concreto)</label>
+        <input id="gMicro" placeholder="Ej: Apartar $25 cada viernes">
+        <div style="margin-top:18px"><button class="btn btn-gold" id="btnCrearMeta">Crear meta</button></div>
+        <div class="quote" id="frase"></div>
+      </div>
+      <div class="card">
+        <h3>Mis metas</h3>
+        <div id="listaMetas"><p class="sub">Aún no tienes metas. Crea la primera a la izquierda.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HERRAMIENTAS -->
+  <section id="herramientas" class="section">
+    <h2 class="title">Paso 3 · Herramientas interactivas</h2>
+    <p class="sub">Simula, registra y da seguimiento. Todo se guarda en tu dispositivo.</p>
+    <div class="grid2">
+      <div class="card">
+        <h3>Simulador de ahorro</h3>
+        <div class="row">
+          <div><label>Ahorro mensual ($)</label><input id="sMensual" type="number" min="0" value="100"></div>
+          <div><label>Meses</label><input id="sMeses" type="number" min="1" value="12"></div>
+        </div>
+        <label>Interés anual (%)</label><input id="sInteres" type="number" min="0" step="0.1" value="5">
+        <div style="margin-top:16px"><button class="btn btn-green" id="btnSimular">Simular</button></div>
+        <div class="result" id="resultadoSim"></div>
+      </div>
+      <div class="card">
+        <h3>Bitácora emocional</h3>
+        <div class="row">
+          <div><label>¿Cómo te sientes hoy con tu dinero?</label>
+            <select id="bEmocion"><option>Tranquilo</option><option>Motivado</option><option>Ansioso</option><option>Estresado</option><option>Triste</option><option>Orgulloso</option></select>
+          </div>
+          <div><label>Intensidad (1-10)</label><input id="bIntensidad" type="number" min="1" max="10" value="5"></div>
+        </div>
+        <label>Nota</label><textarea id="bNota" rows="2" placeholder="¿Qué pasó hoy con tu dinero?"></textarea>
+        <div style="margin-top:14px"><button class="btn btn-green" id="btnBitacora">Guardar entrada</button></div>
+        <div id="listaBitacora"></div>
+      </div>
+    </div>
+    <div class="grid2" style="margin-top:22px">
+      <div class="card">
+        <h3>Panel de metas</h3>
+        <p class="sub">Registra avances y mira tu progreso.</p>
+        <div id="panelMetas"><p class="sub">Crea una meta en el Paso 2 para verla aquí.</p></div>
+      </div>
+      <div class="card">
+        <h3>Recordatorios</h3>
+        <div class="row">
+          <div><label>Texto del recordatorio</label><input id="rTexto" placeholder="Ej: Revisar gastos del domingo"></div>
+          <div><label>Día</label>
+            <select id="rDia"><option>Lunes</option><option>Martes</option><option>Miércoles</option><option>Jueves</option><option>Viernes</option><option>Sábado</option><option>Domingo</option></select>
+          </div>
+        </div>
+        <div style="margin-top:14px"><button class="btn btn-gold" id="btnRecordatorio">Añadir recordatorio</button></div>
+        <div id="listaRecordatorios"></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>Mi Coach Financiero Virtual · Tus datos se guardan solo en este dispositivo · Hecho con 💚 para tu bienestar financiero</footer>
+<div class="toast" id="toast"></div>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+/* Paleta y tokens de diseño */
+:root{
+  --bg:#0e1512; --bg2:#121b17; --card:#16211c; --card2:#1b2822;
+  --line:#26352d; --txt:#e8f0ea; --muted:#9db3a6;
+  --green:#2fbf71; --green-d:#1f8f54; --gold:#d4af37; --gold-d:#a8862a;
+  --red:#e06666; --radius:16px;
+}

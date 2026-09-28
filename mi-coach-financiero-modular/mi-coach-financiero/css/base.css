@@ -1,0 +1,7 @@
+/* Reset y estilos base */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"Segoe UI",system-ui,-apple-system,sans-serif;background:linear-gradient(160deg,var(--bg),#0a0f0c);color:var(--txt);min-height:100vh;line-height:1.55}
+a{color:var(--green)}
+label{display:block;font-size:.85rem;color:var(--muted);margin:14px 0 6px}
+input,select,textarea{width:100%;background:var(--bg2);border:1px solid var(--line);border-radius:10px;color:var(--txt);padding:11px 13px;font-size:.95rem;font-family:inherit}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--green)}
